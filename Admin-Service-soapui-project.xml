@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f25f56f4-095a-4316-92e8-249f05c26250" activeEnvironment="Default" name="Admin Service"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="f171f6af-da80-4476-87de-c5ed597afa0e"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8081" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8081</con:endpoint>
+        </con:endpoints>
+        <con:resource name="" path="/microservices/v1/admin/brands" id="389e9257-e7b3-4769-aeb5-ef59184f94b0">
+            <con:settings/>
+            <con:parameters/>
+            <con:resource name="brands" path="/microservices/v1/admin/brands" id="2ccd59d0-5319-45bb-92a4-0e7dc8fa9748">
+                <con:settings/>
+                <con:parameters/>
+                <con:method name="GET LIST" id="3bc330bb-4485-4cfc-b0d9-bc9162f28e81" method="GET">
+                    <con:settings/>
+                    <con:parameters/>
+                    <con:representation type="FAULT">
+                        <con:mediaType>application/json</con:mediaType>
+                        <con:status>403 404</con:status>
+                        <con:params/>
+                        <con:element xmlns:bran="http://localhost/microservices/v1/admin/brands">bran:Fault
+                        </con:element>
+                    </con:representation>
+                    <con:representation type="RESPONSE">
+                        <con:mediaType>application/json</con:mediaType>
+                        <con:status>200</con:status>
+                        <con:params/>
+                        <con:element>Response</con:element>
+                    </con:representation>
+                    <con:request name="Request 1" id="c0f4d515-db0d-4acd-b8f5-2413304ccec6"
+                                 mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8081</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/microservices/v1/admin/brands</con:originalUri>
+                        <con:credentials>
+                            <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                            <con:authType>OAuth 2.0</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                        <con:parameterOrder/>
+                    </con:request>
+                </con:method>
+            </con:resource>
+            <con:method name="Brand Save" id="b68e8f2f-93a6-4549-8a4d-91f9b953804f" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>401 500</con:status>
+                    <con:params/>
+                    <con:element xmlns:bran="http://localhost/microservices/v1/admin/brands">bran:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:bran="http://localhost/microservices/v1/admin/brands">bran:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="4fdb9214-7473-4ed7-9ff3-d45f7f00e37d" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request>{
+                        "code": "99",
+                        "description": "test brand",
+                        "id": null,
+                        "logoUrl": "test url",
+                        "name": "test name"
+                        }
+                    </con:request>
+                    <con:originalUri>http://localhost/microservices/v1/admin/brands</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                    <con:parameterOrder/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="categories" path="/microservices/v1/admin/categories"
+                      id="794f765e-ff26-4fd8-8177-11dca66b435e">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="GET" id="9e1a519b-a0a2-41a1-b5e1-e8734a8f7fc0" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element xmlns:cat="http://localhost/microservices/v1/categories">cat:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="e8de3b71-c43a-4aa3-9332-1340691ae05f" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/categories</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+            <con:method name="Save" id="ba8146dc-f4b0-4191-a516-6e26ba4ad684" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>401 500</con:status>
+                    <con:params/>
+                    <con:element xmlns:cat="http://localhost/microservices/v1/admin/categories">cat:Fault</con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:cat="http://localhost/microservices/v1/admin/categories">cat:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="e3e36bc0-97d2-4b19-b908-05578e5aa240" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request>{
+                        "code": "CATEG",
+                        "id": 0,
+                        "name": "XXXX"
+                        }
+                    </con:request>
+                    <con:originalUri>http://localhost/microservices/v1/admin/categories</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="users" path="/microservices/v1/admin/users/findByFio"
+                      id="343394fd-93aa-47e0-9384-0803cbad42cd">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>email</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="5f3a9d82-b805-445b-9a17-36fbf2c19ceb" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>404 500 400</con:status>
+                    <con:params/>
+                    <con:element xmlns:good="http://localhost/microservices/v1/admin/goods">good:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="334953d3-bcaa-4eb2-8888-d45ed63a5f4c" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/admin/goods</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="email" value="" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>email</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="disable" path="/microservices/v1/admin/users/disable/1"
+                      id="f2872ca2-6199-4799-8b94-ee432a3b87dc">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Method 1" id="8adfd01b-aec5-4d5b-91a6-553740e6f64e" method="PUT">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>405</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/microservices/v1/admin/users/disable/1">ns:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/microservices/v1/admin/users/disable/1">ns:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="738c22fe-df09-429b-8e5c-ff04d01ec857" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/admin/users/disable/1</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                    <con:parameterOrder/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="enable" path="/microservices/v1/admin/users/enable/1"
+                      id="5711fe50-b91a-4e3a-9926-5bf299dccaae">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Method 1" id="4326c05f-f705-443e-918e-7b8326cb7818" method="PUT">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>405</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/microservices/v1/admin/users/enable/1">ns:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/microservices/v1/admin/users/enable/1">ns:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="2e63254e-28a8-4313-87f8-0e74fd0e12a2" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/admin/users/enable/1</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="findByFio" path="/microservices/v1/admin/users/findByFio"
+                      id="1ef76f65-1fe6-40c9-a854-0540c1d2f26d">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>fio</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="fb8b02c1-d548-4a2b-bbc5-8288f76e55b9" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>401</con:status>
+                    <con:params/>
+                    <con:element xmlns:fin="http://localhost/microservices/v1/admin/users/findByFio">fin:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="8bf3e00a-f6f3-4768-aa3e-c59363fe6f4e" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8081</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/admin/users/findByFio</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="fio" value="Петров" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>fio</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer>
+        <con:oAuth2Profile>
+            <con:name>Profile 1</con:name>
+            <con:clientID>admin</con:clientID>
+            <con:clientSecret>passw0rd</con:clientSecret>
+            <con:accessTokenURI>http://localhost:9999/oauth/token</con:accessTokenURI>
+            <con:accessToken>
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJURVNUIjoiYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBmcm9tIGF1dGggc2VydmVyIiwidXNlcl9uYW1lIjoiYWRtaW5AbWFpbC5ydSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE1NzgwNzAyMTgsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiODI4YTE5YjEtZGY5MS00YzcxLWFjOWYtYzhlMWFmNTYyODRiIiwiY2xpZW50X2lkIjoiYWRtaW4ifQ.30KSPIYxiku62G9pTLTZuwRlfe6R56ymavqzhoXnhqs
+            </con:accessToken>
+            <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+            <con:oAuth2Flow>RESOURCE_OWNER_PASSWORD_CREDENTIALS</con:oAuth2Flow>
+            <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+            <con:scope>read,write</con:scope>
+            <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
+            <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+            <con:resourceOwnerName>admin@mail.ru</con:resourceOwnerName>
+            <con:resourceOwnerPassword>12345</con:resourceOwnerPassword>
+        </con:oAuth2Profile>
+    </con:oAuth2ProfileContainer>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>

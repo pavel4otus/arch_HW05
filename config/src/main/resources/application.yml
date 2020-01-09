@@ -1,0 +1,24 @@
+server:
+  port: 7777
+
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:/otus.configurations
+  profiles:
+    active: native
+  security:
+    user:
+      name: user
+      password: passw0rd
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, loggers, logfile, metrics
+  endpoint:
+    shutdown:
+      enabled: true

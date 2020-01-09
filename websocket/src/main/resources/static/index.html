@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>Chat WebSocket</title>
+    <meta charset="UTF-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+    <script type="text/javascript">
+
+        var stompClient = null;
+        var userUniqueName = null;
+        var toUser = null;
+        var toUniqueName = null;
+
+        function setConnected(connected) {
+
+            document.getElementById('connect').disabled = connected;
+            document.getElementById('disconnect').disabled = !connected;
+            document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+            document.getElementById('response').innerHTML = '';
+        }
+
+        function connect() {
+
+            //var socket = new SockJS('/spring-mvc-java/chat');
+            var socket = new SockJS('/gs-guide-websocket')
+            stompClient = Stomp.over(socket);
+            userUniqueName = document.getElementById("from").value + "-" + uuidv4();
+            stompClient.connect(
+                {
+                    "user": document.getElementById("from").value,
+                    "unique-user": userUniqueName,
+                    "X-Authorization": document.getElementById("token").value,
+                    "Authorization": "Bearer " + document.getElementById("token").value,
+                },
+                function (frame) {
+                    var url = stompClient.ws._transport.url;
+                    console.log("url:" + url);
+                    setConnected(true);
+                    console.log('Connected: ' + frame);
+                    stompClient.subscribe('/user/queue/reply', function (messageOutput) {
+                        console.log("received response" + messageOutput);
+                        var message = JSON.parse(messageOutput.body);
+                        showMessageOutput(messageOutput); //JSON.parse(messageOutput.body));
+                    });
+                    stompClient.subscribe('/user/queue/errors', function (messageOutput) {
+                        console.log("error: " + JSON.parse(messageOutput.body));
+                    });
+
+                });
+        }
+
+        function disconnect() {
+
+            if (stompClient != null) {
+                stompClient.disconnect();
+            }
+
+            setConnected(false);
+            console.log("Disconnected");
+        }
+
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function sendMessage() {
+
+            var from = document.getElementById('from').value;
+            var text = document.getElementById('text').value;
+            var to = toUser;
+            var toUniqueName = document.getElementById('toUniqueName').value;
+            stompClient.send("/app/hello", {},
+                JSON.stringify({
+                    'from': from,
+                    'fromUniqueName': userUniqueName,
+                    'to': to,
+                    'toUniqueName': toUniqueName,
+                    'text': text,
+                    'toUser': toUser
+                }));
+            document.getElementById('text').value = ''
+            ;
+        }
+
+        function showMessageOutput(messageOutput) {
+            console.log('showMessageOutput -> ' + messageOutput);
+            var response = document.getElementById('response');
+            var p = document.createElement('p');
+            p.style.wordWrap = 'break-word';
+            var responseMessage = JSON.parse(messageOutput.body);
+            if (responseMessage.fromUniqueName != "" & responseMessage.fromUniqueName != userUniqueName) {
+                console.log('изменяем toUniqueName');
+                toUniqueName = responseMessage.fromUniqueName;
+                toUser = responseMessage.from;
+            }
+            console.log('toUniqueName ->' + toUniqueName);
+            console.log('toUser       ->' + toUser);
+            document.getElementById('toUniqueName').value = toUniqueName;
+
+            p.appendChild(document.createTextNode(responseMessage.text));
+            // p.appendChild( document.createTextNode( messageOutput.body)); // messageOutput.from + ": " + messageOutput.text + " (" + messageOutput.time + ")"));
+            response.appendChild(p);
+        }
+
+    </script>
+
+</head>
+
+<body onload="disconnect()">
+
+<div>
+    <div>
+        <table border="0">
+            <tr>
+                <td><label for="from">Ваше имя</label></td>
+                <td><input type="text" id="from" placeholder="Введите ваше имя"/></td>
+            </tr>
+            <tr>
+                <td><label for="toUniqueName">Имя получателя</label></td>
+                <td><input type="text" id="toUniqueName" placeholder="Введите имя получателя сообщения"/></td>
+            </tr>
+            <tr>
+                <td><label for="token">Токен</label></td>
+                <td><input type="text" id="token" placeholder="Введите токен"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <br/>
+    <div>
+        <button id="connect" onclick="connect();">Connect</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+    </div>
+    <br/>
+    <div>
+        <label id="operator" visible="false"></label>
+    </div>
+    <div id="conversationDiv">
+        <input type="text" id="text" placeholder="Введите сообщение ..."/>
+        <button id="sendMessage" onclick="sendMessage();">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+
+</body>
+</html>

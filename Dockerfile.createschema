@@ -1,0 +1,16 @@
+FROM openjdk:8-jdk
+
+ENV PROJECT_DIR=/app
+
+RUN mkdir -p $PROJECT_DIR
+
+WORKDIR $PROJECT_DIR
+
+COPY /createschema/target/createschema-2.2.1.RELEASE.jar    $PROJECT_DIR/createschema.jar
+
+COPY wait_it.sh $PROJECT_DIR/wait_it.sh
+
+RUN chmod 777 ./wait_it.sh
+
+#ENTRYPOINT [ "./wait_it.sh", "http://config:7777/actuator/health", "20", "5" ]
+#CMD [ "java", "-jar", "createschema.jar"]

@@ -1,0 +1,1 @@
+curl http://localhost:9999/oauth/token -d"grant_type=password&username=test2@mail.ru&password=12345"  -H"Content-type:application/x-www-form-urlencoded; charset=utf-8"  -u admin:passw0rd

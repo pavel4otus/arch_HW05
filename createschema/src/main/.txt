@@ -1,0 +1,6 @@
+test2@mail.ru	ROLE_USER
+test3@mail.ru	ROLE_USER
+test4@mail.ru	ROLE_USER
+test5@mail.ru	ROLE_USER
+test6@mail.ru	ROLE_USER
+admin@mail.ru	ROLE_ADMIN

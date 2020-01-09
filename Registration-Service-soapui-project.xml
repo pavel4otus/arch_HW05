@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="eeac29e3-bfb5-43bc-af52-51f079d7ca36" activeEnvironment="Default" name="Registration Service"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="16716a71-2d5c-4c23-93e3-0d9854d5ae02"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8085" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8085</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Register" path="/microservices/v1/users/" id="fc7bf717-0093-438e-87b7-7aa387178acf">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Register 1" id="20bb2b24-e62b-4d00-a718-fd344f37268c" method="PUT">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element xmlns:reg="http://localhost/microservices/v1/users/register">reg:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:reg="http://localhost/microservices/v1/users/register">reg:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="191867b7-ed74-4776-a97d-a1a46f093d5d" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8085</con:endpoint>
+                    <con:request>{
+                        "active": true,
+                        "email": "string@mail.ru",
+                        "fio": "TMP3",
+                        "id": 0,
+                        "password": "12345",
+                        "phone": "892188282828",
+                        "role": "ROLE_ADMIN"
+                        }
+                    </con:request>
+                    <con:originalUri>http://localhost/microservices/v1/users/register</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>

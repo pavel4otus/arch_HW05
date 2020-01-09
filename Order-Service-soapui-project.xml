@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6c1be226-7964-40b1-a33b-84d81480228a" activeEnvironment="Default" name="Order Service"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="ab1e3ad2-f4b9-4924-8bee-f7941e414bd2"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8084" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8084</con:endpoint>
+        </con:endpoints>
+        <con:resource name="" path="/microservices/v1/order/setaddress" id="8dfa91d7-f6a3-4101-84e8-ab938b6adf1b">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>address</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="1" id="ea0de9c9-b5cd-48e6-ab23-12699b1d5d3f" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>405 500</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setaddress">set:Fault</con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setaddress">set:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="b1fb7218-f555-495b-8357-2059abfd7923" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8084</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/order/setaddress</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="address" value="test address" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>address</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="setpaymentmethod" path="/microservices/v1/order/setpaymentmethod"
+                      id="612fe8bf-cb89-4a76-b79c-e22252c0ce4f">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>paymentMethodId</con:name>
+                    <con:value>1</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>1</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="617d7eec-fde6-46e0-a535-f9a7a68ee4e1" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setpaymentmethod">set:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setpaymentmethod">set:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="c7f82c82-c5c0-4a97-be4d-995c477862b5" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8084</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/order/setpaymentmethod</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="paymentMethodId" value="1" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>paymentMethodId</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="setdeliverytmethod" path="/microservices/v1/order/setdeliverymethod"
+                      id="83b863ad-8b00-4f78-9328-008fe981163d">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>deliveryMethodId</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="c5e01199-b2e9-4125-90f5-9c3f942dc854" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>401 404</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setdeliverytmethod">set:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:set="http://localhost/microservices/v1/order/setdeliverytmethod">set:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="033dfa96-00d1-4796-80fc-1e6351f151b1" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8084</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/order/setdeliverytmethod</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="deliveryMethodId" value="1" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>deliveryMethodId</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer>
+        <con:oAuth2Profile>
+            <con:name>Profile 1</con:name>
+            <con:accessToken>
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJURVNUIjoiYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBmcm9tIGF1dGggc2VydmVyIiwidXNlcl9uYW1lIjoidGVzdDJAbWFpbC5ydSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE1NzgwNTYwNTAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIwZTVkNzA0MC1mYzMzLTRhM2UtYTcwYS03YzU4ODc4YjQ1MmQiLCJjbGllbnRfaWQiOiJhZG1pbiJ9.wPEnPOxRnhLz1CG-ZpFk8aUmZAopSEa7XkXLVR3p5J0
+            </con:accessToken>
+            <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+            <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+            <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+            <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
+            <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+        </con:oAuth2Profile>
+    </con:oAuth2ProfileContainer>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>

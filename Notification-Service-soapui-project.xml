@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a33325b3-391a-473c-99a6-3da2f927cc19" activeEnvironment="Default" name="Notification Service"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="5f6a75b9-a6ec-46a9-8354-203c754f3326"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8086" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8086</con:endpoint>
+        </con:endpoints>
+        <con:resource name="" path="/microservices/v1/notification" id="44905f04-314c-472c-903f-2ea493f0669c">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="/microservices/v1/notification" id="52bf10d5-ec83-476e-af24-ed2e6e40e744" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>500 401</con:status>
+                    <con:params/>
+                    <con:element xmlns:not="http://localhost/microservices/v1/notification">not:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>204</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="2c5ccbf8-b7c6-4904-b755-92c9f156dcaa" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8086</con:endpoint>
+                    <con:request>
+                        {
+                        "destination": "email",
+                        "to": "paveltseitlin@mail.ru",
+                        "subject": "subj",
+                        "text": "test message"
+                        }
+                    </con:request>
+                    <con:originalUri>http://localhost/microservices/v1/notification</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer>
+        <con:oAuth2Profile>
+            <con:name>Profile 1</con:name>
+            <con:accessToken>
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJURVNUIjoiYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBmcm9tIGF1dGggc2VydmVyIiwidXNlcl9uYW1lIjoiYWRtaW5AbWFpbC5ydSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE1NzgwNzcyMDAsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiZTJkZWEzNzktMTZlYy00ODNiLWE4NmYtOGI1ODVlOGZkZjJmIiwiY2xpZW50X2lkIjoiYWRtaW4ifQ.cDSuIpAxuxUscNJPc-Tv5ZAbVp6VlO-T6TZH9MOL0o0
+            </con:accessToken>
+            <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+            <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+            <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+            <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
+            <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+        </con:oAuth2Profile>
+    </con:oAuth2ProfileContainer>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>

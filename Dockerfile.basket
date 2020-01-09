@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk
+
+ENV PROJECT_DIR=/app
+
+RUN mkdir -p $PROJECT_DIR
+
+WORKDIR $PROJECT_DIR
+
+COPY /basket/target/basket-2.2.1.RELEASE.jar   $PROJECT_DIR/basket.jar
+
+CMD [ "java", "-jar", "basket.jar"]

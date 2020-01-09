@@ -1,0 +1,159 @@
+version: '3'
+services:
+
+    postgres:
+       container_name: postgres
+       networks:
+         - app
+       image: postgres:12
+       restart: on-failure
+       ports:
+         - 65432:5432
+       volumes:
+         - ./pgdata:/var/lib.postgresql/data
+       environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=postgres
+         - POSTGRES_DB=eshop
+
+    config:
+       container_name: config
+       restart: on-failure
+       networks:
+         - app
+       ports:
+         - 7777:7777
+       build:
+         context: .
+         dockerfile: Dockerfile.config
+       depends_on:
+         - postgres
+       volumes:
+         - ./config.configuration:/config.configuration
+         - ./otus.configurations:/otus.configurations
+
+    createschema:
+       container_name: createschema
+       networks:
+         - app
+       restart: on-failure
+       build:
+         context: .
+         dockerfile: Dockerfile.createschema
+       depends_on:
+         - postgres
+         - config
+       entrypoint: [ "./wait_it.sh", "http://config:7777/actuator/health", "20", "5" ]
+       command:    [ "java", "-jar", "createschema.jar" ]
+
+
+    authentication:
+       container_name: authentication
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 9999:9999
+       build:
+         context: .
+         dockerfile: Dockerfile.authentication
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+
+    admin:
+       container_name: admin
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8081:8081
+       build:
+         context: .
+         dockerfile: Dockerfile.admin
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+
+
+    basket:
+       container_name: basket
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8083:8083
+       build:
+         context: .
+         dockerfile: Dockerfile.basket
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+    catalog:
+       container_name: catalog
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8082:8082
+       build:
+         context: .
+         dockerfile: Dockerfile.catalog
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+    notification:
+       container_name: notification
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8086:8086
+       build:
+         context: .
+         dockerfile: Dockerfile.notification
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+    order:
+       container_name: order
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8084:8084
+       build:
+         context: .
+         dockerfile: Dockerfile.order
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+    registration:
+       container_name: registration
+       networks:
+         - app
+       restart: on-failure
+       ports:
+         - 8085:8085
+       build:
+         context: .
+         dockerfile: Dockerfile.registration
+       depends_on:
+         - postgres
+         - config
+         - createschema
+
+networks:
+  app:

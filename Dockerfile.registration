@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk
+
+ENV PROJECT_DIR=/app
+
+RUN mkdir -p $PROJECT_DIR
+
+WORKDIR $PROJECT_DIR
+
+COPY /registration/target/registration-2.2.1.RELEASE.jar   $PROJECT_DIR/registration.jar
+
+CMD [ "java", "-jar", "registration.jar"]

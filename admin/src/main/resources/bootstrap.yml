@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:7777
+      username: user
+      password: passw0rd
+  application:
+    name: admin
+  profiles:
+    active: dev

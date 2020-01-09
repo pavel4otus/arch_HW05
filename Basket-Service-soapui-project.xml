@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="71d2a0a3-3c91-4099-87a5-4a97c36ed553" activeEnvironment="Default" name="Basket Service"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="8586d3cf-4d8d-4fcb-a959-463fa600e3e5"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8083" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8083</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Additem" path="/microservices/v1/user/basket/additem"
+                      id="fe20170d-d0f7-496c-b3a3-7d892704e566">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>count</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>goodId</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Additem 1" id="d6289fbb-bf26-4a87-91a1-6f65a5551c8b" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>500 401</con:status>
+                    <con:params/>
+                    <con:element xmlns:add="http://localhost/microservices/v1/user/basket/additem">add:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>text/html;charset=utf-8</con:mediaType>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element>html</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:request name="Add item" id="2ce5a2cc-0f2c-4182-a48e-3af1cec5a8ba" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8083</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/microservices/v1/user/basket/additem</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="count" value="1"/>
+                        <con:entry key="goodId" value="2"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>count</con:entry>
+                        <con:entry>goodId</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="removeitem" path="/microservices/v1/user/basket/removeitem"
+                      id="5fdd0ce5-73eb-4080-b7f5-3c71a65f1536">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>goodId</con:name>
+                    <con:value>2</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>2</con:default>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>count</con:name>
+                    <con:value>1</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>1</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="8ac3811c-f357-4d26-83d8-cc8a5a74c9a7" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Request 1" id="7caea382-1bd8-4963-ae76-12068c7560a7" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8083</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:selectedAuthProfile>Profile 1</con:selectedAuthProfile>
+                        <con:authType>OAuth 2.0</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="count" value=""/>
+                        <con:entry key="goodId" value="2"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>goodId</con:entry>
+                        <con:entry>count</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer>
+        <con:oAuth2Profile>
+            <con:name>Profile 1</con:name>
+            <con:clientID>admin</con:clientID>
+            <con:clientSecret>passw0rd</con:clientSecret>
+            <con:authorizationURI>http://localhost:9999/oauth/token</con:authorizationURI>
+            <con:accessTokenURI>http://localhost:9999/oauth/token</con:accessTokenURI>
+            <con:accessToken>
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJURVNUIjoiYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBmcm9tIGF1dGggc2VydmVyIiwidXNlcl9uYW1lIjoidGVzdDJAbWFpbC5ydSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE1NzgwNDc0NDgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiI5YjBhOWQxYi0yYjJjLTQ0MGMtOGRmZS1hYzg2MWMyN2EwNzgiLCJjbGllbnRfaWQiOiJhZG1pbiJ9.tfg9QsLG2Vd33Pk5ukZi96pYJZHC-dbfQZgrS6LeCsY
+            </con:accessToken>
+            <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+            <con:oAuth2Flow>RESOURCE_OWNER_PASSWORD_CREDENTIALS</con:oAuth2Flow>
+            <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+            <con:scope>read,write</con:scope>
+            <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
+            <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+            <con:manualAccessTokenExpirationTime/>
+            <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+            <con:resourceOwnerName>test2@mail.ru</con:resourceOwnerName>
+            <con:resourceOwnerPassword>12345</con:resourceOwnerPassword>
+        </con:oAuth2Profile>
+    </con:oAuth2ProfileContainer>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>
